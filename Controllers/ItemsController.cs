@@ -27,15 +27,20 @@ namespace Catalog.Controllers
         [HttpGet]
         public IEnumerable<Item> GetItems()
         {
-            return (IEnumerable<Item>)this.repository.GetItems();
+            return this.repository.GetItems();
         }
         //Get only one item
 
         //GET /item/id
         [HttpGet("{id}")]
-        public Item GetItem(Guid id)
+        public ActionResult<Item> GetItem(Guid id)
         {
-            return this.repository.GetItem(id);
+            var item = this.repository.GetItem(id); 
+            if(item == null)
+            {
+                return NotFound();
+            }
+            return item;
         }
     }
 }

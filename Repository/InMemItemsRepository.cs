@@ -1,4 +1,5 @@
 ﻿using Catalog.Entities;
+using System.Linq;
 
 namespace Catalog.Repository
 {
@@ -19,7 +20,7 @@ namespace Catalog.Repository
         //Get only one item
         public Item GetItem(Guid id)
         {
-            return (Item)items.Where(item => item.Id == id);
+            return items.Where(item => item.Id == id).SingleOrDefault();
         }
     }
 }
