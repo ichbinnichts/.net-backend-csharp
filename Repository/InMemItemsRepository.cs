@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Catalog.Repository
 {
-    public class InMemItemsRepository
+    public class InMemItemsRepository : IItemsRepository
     {
         //Create a bunch of items
         private readonly List<Item> items = new()

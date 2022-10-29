@@ -10,13 +10,15 @@ namespace Catalog.Controllers
     public class ItemsController: ControllerBase
     {
         //Getting our repository
-        private readonly InMemItemsRepository repository;
+        private readonly IItemsRepository repository;
 
 
         // ----- Constructor -----
-        public ItemsController()
+
+        //Dependency injection
+        public ItemsController(IItemsRepository repository)
         {
-            repository = new InMemItemsRepository();
+            this.repository = repository;
         }
         // ----- Constructor END -----
 
