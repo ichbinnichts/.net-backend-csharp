@@ -9,5 +9,7 @@ namespace Catalog.Repository
         Item GetItem(Guid id);
         //Get all items
         IEnumerable<Item> GetItems();   
+        //Post item
+        void Add(Item item);
     }
 }

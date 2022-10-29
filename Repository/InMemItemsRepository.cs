@@ -22,5 +22,10 @@ namespace Catalog.Repository
         {
             return items.Where(item => item.Id == id).SingleOrDefault();
         }
+        //Post item method
+        public void Add(Item item)
+        {
+            items.Add(item);
+        }
     }
 }
