@@ -1,7 +1,6 @@
-﻿namespace Catalog.Entities
+﻿namespace Catalog.Dtos
 {
-    //This is a model
-    public record Item
+    public record ItemDto
     {
         //Id of the model
         public Guid Id { get; init; }
@@ -10,6 +9,6 @@
         //Price attribute
         public decimal Price { get; init; }
         //Created date attribute
-        public DateTime CreatedDate { get; set; }   
+        public DateTime CreatedDate { get; set; }
     }
 }
