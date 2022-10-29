@@ -34,5 +34,11 @@ namespace Catalog.Repository
             var index = items.FindIndex(existItem => existItem.Id == item.Id);
             items[index] = item;
         }
+        //Delete item method
+        public void Delete(Guid id)
+        {
+            var index = items.FindIndex(existItem => existItem.Id == id);
+            items.RemoveAt(index);
+        }
     }
 }

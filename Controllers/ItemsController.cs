@@ -85,5 +85,22 @@ namespace Catalog.Controllers
 
             return NoContent();
         }
+        //Delete item method
+
+        //DELETE /items/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteItem(Guid id)
+        {
+            var existsItem = repository.GetItem(id);
+
+            if (existsItem is null)
+            {
+                return NotFound();
+            }
+
+            repository.Delete(id);
+
+            return NoContent();
+        }
     }
 }
