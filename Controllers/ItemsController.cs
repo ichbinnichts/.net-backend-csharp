@@ -15,7 +15,7 @@ namespace Catalog.Controllers
 
         // ----- Constructor -----
 
-        //Dependency injection
+        //Dependency injection    
         public ItemsController(IItemsRepository repository)
         {
             this.repository = repository;
