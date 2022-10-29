@@ -11,5 +11,7 @@ namespace Catalog.Repository
         IEnumerable<Item> GetItems();   
         //Post item
         void Add(Item item);
+        //Update/Put item 
+        void Update(Item item);
     }
 }

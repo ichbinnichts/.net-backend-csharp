@@ -2,15 +2,13 @@
 
 namespace Catalog.Dtos
 {
-    public record AddItemDto
+    public record UpdateItemDto
     {
-        //Name attribute
         [Required]
         public string Name { get; init; }
-        //Price attribute
+
         [Required]
-        [Range(1, 10000)]
-        public decimal Price { get; init; }
-        
+        [Range(1,10000)]
+        public decimal Price { get;init;}
     }
 }
