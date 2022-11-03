@@ -1,12 +1,17 @@
 ﻿using Catalog.Entities;
+using MongoDB.Driver;
 
 namespace Catalog.Repository
 {
     public class MongoDbItemsRepository : IItemsRepository
     {
-        public MongoDbItemsRepository()
+        private const string databaseName = "catalog";
+        private const string collectionName = "items";
+        private readonly IMongoCollection<Item> itemsCollection;
+        public MongoDbItemsRepository(IMongoClient mongoClient)
         {
-
+            IMongoDatabase database = mongoClient.GetDatabase(databaseName);
+            itemsCollection = database.GetCollection<Item>(collectionName);
         }
 
         public void Add(Item item)
