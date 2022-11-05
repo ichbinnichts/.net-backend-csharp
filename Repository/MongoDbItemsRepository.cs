@@ -16,7 +16,7 @@ namespace Catalog.Repository
 
         public void Add(Item item)
         {
-            throw new NotImplementedException();
+            itemsCollection.InsertOne(item);
         }
 
         public void Delete(Guid id)
